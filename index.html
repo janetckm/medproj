@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMR - Electronic Medical Records</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <div class="logo-icon">
+                </div>
+                <span class="logo-text">EMR</span>
+            </div>
+
+            <div class="sidebar-user">
+                <div class="user-avatar">
+                </div>
+                <div class="user-info">
+                    <span class="user-name">User</span>
+                    <svg class="dropdown-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item">
+                        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
+                        <span>Dashboard</span>
+                    </li>
+                    <li class="nav-item nav-item-section-header active">
+                        <span class="active-dot"></span>
+                        <svg class="nav-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        <span>Medical Records</span>
+                    </li>
+                    <li class="nav-case-case-list">
+                        <ul class="case-list-inner" id="caseSideNavList">
+                            <li class="case-nav-item active" data-case="1"><span class="case-dot"></span>Case 1 · Medical Record</li>
+                            <li class="case-nav-item" data-case="2"><span class="case-dot"></span>Case 2 · Medical Record</li>
+                            <li class="case-nav-item" data-case="3"><span class="case-dot"></span>Case 3 · Medical Record</li>
+                            <li class="case-nav-item" data-case="4"><span class="case-dot"></span>Case 4 · Medical Record</li>
+                            <li class="case-nav-item" data-case="5"><span class="case-dot"></span>Case 5 · Medical Record</li>
+                            <li class="case-nav-item" data-case="6"><span class="case-dot"></span>Case 6 · Medical Record</li>
+                            <li class="case-nav-item" data-case="7"><span class="case-dot"></span>Case 7 · Medical Record</li>
+                            <li class="case-nav-item" data-case="8"><span class="case-dot"></span>Case 8 · Medical Record</li>
+                            <li class="case-nav-item" data-case="9"><span class="case-dot"></span>Case 9 · Medical Record</li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 class="page-title">Medical Records</h1>
+                </div>
+                <div class="header-right">
+                    <div class="header-actions">
+                        <button class="icon-btn" title="Search">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="case-tabs-bar" id="caseTopTabs">
+                <button class="case-tab active" data-case="1">Medical Record Case 1</button>
+                <button class="case-tab" data-case="2">Medical Record Case 2</button>
+                <button class="case-tab" data-case="3">Medical Record Case 3</button>
+                <button class="case-tab" data-case="4">Medical Record Case 4</button>
+                <button class="case-tab" data-case="5">Medical Record Case 5</button>
+                <button class="case-tab" data-case="6">Medical Record Case 6</button>
+                <button class="case-tab" data-case="7">Medical Record Case 7</button>
+                <button class="case-tab" data-case="8">Medical Record Case 8</button>
+                <button class="case-tab" data-case="9">Medical Record Case 9</button>
+            </div>
+
+            <div class="content-wrapper">
+                <div class="ehr-content">
+                    <div class="export-bar">
+                        <button class="btn-outline">
+                            Export
+                        </button>
+                    </div>
+
+                    <div class="grid-row grid-row-top">
+                        <div class="card card-patient-data">
+                            <div class="card-header">
+                                <h3>Patient Data</h3>
+                                <button class="link-btn">Edit</button>
+                            </div>
+
+                            <div class="data-section">
+                                <div class="section-title">Personal Information</div>
+                                <div class="data-grid" id="patientPersonalData">
+                                    <div class="data-item">
+                                        <span class="data-label">Name</span>
+                                        <span class="data-value" data-field="name">Lola Greenwood</span>
+                                    </div>
+                                    <div class="data-item">
+                                        <span class="data-label">Patient ID</span>
+                                        <span class="data-value" data-field="patientId">PID009384</span>
+                                    </div>
+                                    <div class="data-item">
+                                        <span class="data-label">Age / Sex</span>
+                                        <span class="data-value" data-field="ageSex">34F</span>
+                                    </div>
+                                    <div class="data-item">
+                                        <span class="data-label">Blood Group</span>
+                                        <span class="data-value" data-field="bloodGroup">A+</span>
+                                    </div>
+                                    <div class="data-item">
+                                        <span class="data-label">Presenting Complaint</span>
+                                        <span class="data-value" data-field="pc">Routine follow-up</span>
+                                    </div>
+                                    <div class="data-item">
+                                        <span class="data-label">History PC</span>
+                                        <span class="data-value" data-field="hxPc">As per clinic note</span>
+                                    </div>
+                                    <div class="data-item">
+                                        <span class="data-label">Phone</span>
+                                        <span class="data-value" data-field="phone">(808) 555-0111</span>
+                                    </div>
+                                    <div class="data-item">
+                                        <span class="data-label">E-mail</span>
+                                        <span class="data-value" data-field="email">nvt.isst.nute@gmail.com</span>
+                                    </div>
+                                    <div class="data-item">
+                                        <span class="data-label">Address</span>
+                                        <span class="data-value" data-field="address">12 Glory st. New York ...</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="data-section">
+                                <div class="section-title">Past Medical / Surgical / Social</div>
+                                <div class="data-grid" id="patientHistoryData">
+                                    <div class="data-item">
+                                        <span class="data-label">PMHx</span>
+                                        <span class="data-value" data-field="pmhx">COPD, HTN, Anxiety</span>
+                                    </div>
+                                    <div class="data-item">
+                                        <span class="data-label">PSHx</span>
+                                        <span class="data-value" data-field="pshx">Appendectomy 2019</span>
+                                    </div>
+                                    <div class="data-item">
+                                        <span class="data-label">SHx</span>
+                                        <span class="data-value" data-field="shx">Nil documented</span>
+                                    </div>
+                                    <div class="data-item">
+                                        <span class="data-label">Allergies</span>
+                                        <span class="data-value" data-field="allergies">Penicillin</span>
+                                    </div>
+                                    <div class="data-item">
+                                        <span class="data-label">Gynae Hx</span>
+                                        <span class="data-value" data-field="gynhx">Not documented</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="data-section">
+                                <div class="section-title">On Examination</div>
+                                <div class="data-grid" id="patientExamData">
+                                    <div class="data-item">
+                                        <span class="data-label">General</span>
+                                        <span class="data-value" data-field="examGeneral">Well, in no distress</span>
+                                    </div>
+                                    <div class="data-item">
+                                        <span class="data-label">Chest</span>
+                                        <span class="data-value" data-field="examChest">Clear AE</span>
+                                    </div>
+                                    <div class="data-item">
+                                        <span class="data-label">Abdomen</span>
+                                        <span class="data-value" data-field="examAbdomen">Soft, non-tender</span>
+                                    </div>
+                                    <div class="data-item">
+                                        <span class="data-label">Other</span>
+                                        <span class="data-value" data-field="examOther">—</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cards-column">
+                            <div class="cards-row">
+                                <div class="card card-small">
+                                    <div class="card-header">
+                                        <h3>Last Vitals
+                                            <svg class="card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2">
+                                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                            </svg>
+                                        </h3>
+                                    </div>
+                                    <div class="vitals-list" id="vitalsList">
+                                        <div class="vital-item">
+                                            <span class="vital-label">Weight</span>
+                                            <span class="vital-value">77 kg</span>
+                                        </div>
+                                        <div class="vital-item">
+                                            <span class="vital-label">Height</span>
+                                            <span class="vital-value">170 cm</span>
+                                        </div>
+                                        <div class="vital-item">
+                                            <span class="vital-label">Blood pr.</span>
+                                            <span class="vital-value">120/70</span>
+                                        </div>
+                                        <div class="vital-item">
+                                            <span class="vital-label">Pulse</span>
+                                            <span class="vital-value">60</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button class="link-btn">View All</button>
+                                    </div>
+                                </div>
+
+                                <div class="card card-small">
+                                    <div class="card-header">
+                                        <h3>Major Problems
+                                            <svg class="card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2">
+                                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                            </svg>
+                                        </h3>
+                                    </div>
+                                    <table class="mini-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Type</th>
+                                                <th>Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="majorProblemsTable">
+                                        </tbody>
+                                    </table>
+                                    <div class="card-footer">
+                                        <button class="link-btn">View All</button>
+                                    </div>
+                                </div>
+
+                                <div class="card card-small">
+                                    <div class="card-header">
+                                        <h3>Medical History
+                                            <svg class="card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2">
+                                                <path d="M12 20h9"></path>
+                                                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                                            </svg>
+                                        </h3>
+                                    </div>
+                                    <table class="mini-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Type</th>
+                                                <th>Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="medicalHistoryTable">
+                                        </tbody>
+                                    </table>
+                                    <div class="card-footer">
+                                        <button class="link-btn">View All</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="cards-row">
+                                <div class="card card-small">
+                                    <div class="card-header">
+                                        <h3>Chronic Medication
+                                            <svg class="card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2">
+                                                <path d="M20 7h-3a2 2 0 0 1-2-2V2"></path>
+                                                <path d="M9 18a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h7l4 4v10a2 2 0 0 1-2 2z"></path>
+                                                <path d="M3 7.46v3.08"></path>
+                                                <path d="M3 13.46v3.08"></path>
+                                            </svg>
+                                        </h3>
+                                    </div>
+                                    <table class="mini-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Title on medication</th>
+                                                <th>Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="medicationsTable">
+                                        </tbody>
+                                    </table>
+                                    <div class="card-footer">
+                                        <button class="link-btn">View All</button>
+                                    </div>
+                                </div>
+
+                                <div class="card card-small">
+                                    <div class="card-header">
+                                        <h3>Lab results
+                                            <svg class="card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2">
+                                                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                                                <polyline points="14 2 14 8 20 8"></polyline>
+                                            </svg>
+                                        </h3>
+                                    </div>
+                                    <table class="mini-table mini-table-wide">
+                                        <thead>
+                                            <tr>
+                                                <th>Test</th>
+                                                <th>Result</th>
+                                                <th>Range</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="labResultsTable">
+                                        </tbody>
+                                    </table>
+                                    <div class="card-footer">
+                                        <button class="link-btn">View All</button>
+                                    </div>
+                                </div>
+
+                                <div class="card card-small">
+                                    <div class="card-header">
+                                        <h3>Last Visit
+                                            <svg class="card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2">
+                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                                <polyline points="14 2 14 8 20 8"></polyline>
+                                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                            </svg>
+                                        </h3>
+                                    </div>
+                                    <div class="visit-details" id="lastVisitDetails">
+                                        <div class="visit-section">
+                                            <div class="visit-label">Reason of visit</div>
+                                            <div class="visit-text" data-field="reason">Candidiasis can be a pesky infection to treat, more so since.</div>
+                                        </div>
+                                        <div class="visit-section">
+                                            <div class="visit-label">Diagnosis</div>
+                                            <div class="visit-text" data-field="diagnosis">There antifungals may cause side effects</div>
+                                        </div>
+                                        <div class="visit-section">
+                                            <div class="visit-label">Plan / Treatment</div>
+                                            <div class="visit-text" data-field="treatment">Paracetomol Strenght,10% Coverage</div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer">
+                                        <button class="link-btn">View All</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card card-visits">
+                        <div class="card-header">
+                            <h3>Investigations &amp; Visits
+                                <svg class="card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                </svg>
+                            </h3>
+                        </div>
+                        <table class="visits-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Investigation / Detail</th>
+                                    <th>Referral / Modality</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="allVisitsTable">
+                            </tbody>
+                        </table>
+                        <div class="card-footer">
+                            <button class="link-btn">View All</button>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="ai-panel" id="aiPanel">
+                    <div class="ai-header">
+                        <div class="ai-header-left">
+                            <div class="ai-avatar">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="10" rx="2"></rect>
+                                    <circle cx="12" cy="5" r="2"></circle>
+                                    <path d="M12 7v4"></path>
+                                    <line x1="8" y1="16" x2="8" y2="16"></line>
+                                    <line x1="16" y1="16" x2="16" y2="16"></line>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="ai-name">MedAssist AI</div>
+                                <div class="ai-status">
+                                    <span class="status-dot"></span>
+                                    Online
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ai-header-actions">
+                            <button class="icon-btn-sm" id="toggleAiPanel" title="Minimize">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="4 14 10 14 10 20"></polyline>
+                                    <polyline points="20 10 14 10 14 4"></polyline>
+                                    <line x1="14" y1="10" x2="21" y2="3"></line>
+                                    <line x1="3" y1="21" x2="10" y2="14"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="ai-suggestions">
+                        <div class="suggestions-title">Quick Actions</div>
+                        <div class="suggestion-chips">
+                            <button class="chip" data-query="Summarize patient history">📋 Summarize patient history</button>
+                            <button class="chip" data-query="Check for drug interactions">💊 Check drug interactions</button>
+                            <button class="chip" data-query="Explain abnormal lab results">🔬 Explain abnormal labs</button>
+                            <button class="chip" data-query="Suggest next steps">💡 Suggest next steps</button>
+                        </div>
+                    </div>
+
+                    <div class="ai-chat-messages" id="chatMessages">
+                        <div class="message message-ai">
+                            <div class="message-avatar ai">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="10" rx="2"></rect>
+                                    <circle cx="12" cy="5" r="2"></circle>
+                                </svg>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-text">
+                                    Hello Dr. User! I'm MedAssist AI, your clinical assistant. I can help you with patient record analysis, drug interaction checks, lab result interpretation, and clinical decision support. How can I assist you with this patient today?
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ai-typing-indicator" id="typingIndicator" style="display:none;">
+                        <div class="message-avatar ai">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="10" rx="2"></rect>
+                                <circle cx="12" cy="5" r="2"></circle>
+                            </svg>
+                        </div>
+                        <div class="typing-bubble">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="ai-input-area">
+                        <div class="ai-input-wrapper">
+                            <input type="text" class="ai-input" id="aiInput" placeholder="Ask MedAssist AI anything about this patient...">
+                            <button class="ai-send-btn" id="aiSendBtn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="ai-footer">
+                        <span class="ai-disclaimer">AI-generated content should be verified by a clinician</span>
+                    </div>
+                </aside>
+
+                <button class="ai-fab" id="aiFab" style="display:none;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span class="fab-badge">AI</span>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
